@@ -58,9 +58,6 @@
       
 <div class="flex flex-col lg:flex-row">
 
-
-
-
   <div>
     <!-- cards section start  kitchenware-->
     
@@ -69,25 +66,27 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-10">
       
           <!-- first card -->
-          <div id="K.Accessories" class="card bg-base-100 border border-white p-9">
+          <div onclick="handleCLikBtn(this)"class="card bg-base-100 border border-white p-9">
             <figure class="bg-[#1111110D] pb-4">
-              <img class="" src="images/prod1.png"/>
+              <img class="" src="images/prod1.png" />
             </figure>
             <div class="card-body text-center bg-white rounded-lg">
               <div class="rating justify-center">
                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" checked/>
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]"  />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
               </div>
-              <h3 class="text-2xl font-semibold"> K.Accessories </h3>
+              <h3 id="card1Name" class="text-2xl font-semibold">K.Accessories</h3>
               <p class="text-[#11111180]">39.00 TK</p>
             </div>
           </div>
+        
+          
       
           <!-- second card -->
-          <div class="card bg-base-100 border border-white p-9">
+          <div onclick="handleCLikBtn(this)" class="card bg-base-100 border border-white p-9">
             <figure class="bg-[#1111110D] pb-4">
               <img class="" src="images/prod2.png"/>
             </figure>
@@ -100,11 +99,11 @@
                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
               </div>
               <h3 class="text-2xl font-semibold"> K.Accessories </h3>
-              <p class="text-[#11111180]">25.00 TK</p>
+              <p class="text-[#11111180]"><span id="">25.00</span> TK</p>
             </div>
           </div>
           <!-- third card -->
-          <div class="card bg-base-100 border border-white p-9">
+          <div onclick="handleCLikBtn(this)" class="card bg-base-100 border border-white p-9">
             <figure class="bg-[#1111110D] pb-4">
               <img class="" src="images/prod3.png"/>
             </figure>
@@ -128,7 +127,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-10">
         
             <!-- first card -->
-            <div class="card bg-base-100 border border-white p-9">
+            <div onclick="handleCLikBtn(this)" class="card bg-base-100 border border-white p-9">
               <figure class="bg-[#1111110D] pb-4">
                 <img class="" src="images/prod4.png"/>
               </figure>
@@ -145,7 +144,7 @@
               </div>
             </div>
             <!-- second card -->
-            <div class="card bg-base-100 border border-white p-9">
+            <div onclick="handleCLikBtn(this)" class="card bg-base-100 border border-white p-9">
               <figure class="bg-[#1111110D] pb-4">
                 <img class="" src="images/prod5.png"/>
               </figure>
@@ -162,7 +161,7 @@
               </div>
             </div>
             <!-- third card -->
-            <div class="card bg-base-100 border border-white p-9">
+            <div onclick="handleCLikBtn(this)" class="card bg-base-100 border border-white p-9">
               <figure class="bg-[#1111110D] pb-4">
                 <img class="" src="images/prod6.png"/>
               </figure>
@@ -201,21 +200,43 @@
 
 
       <div class="bg-white p-4 md:p-8 text-left rounded-xl mt-5">
-        <ul class="lg:text-left text-center font-bold text-lg">
-          <li>1.Home Cooker</li>
-          <li>2.Sports cates</li>
-          <li>3.Home Cooker</li>
+        <ul id="selected-items" class="lg:text-left text-center font-bold text-lg">
+          <div class="" id="selected-items" > 
+  
+          </div>
         </ul>
         <br>
         <hr>
         <br>
+        
+       
         <ul class="lg:text-left text-center font-bold text-lg">
-          <li>total Price: <span class="text-[#11111180]">000.00TK</span> </li>
+          <li> <p>Total Price: <span id="Total" class="text-[#11111180]">0.00 </span>TK</p></li>
           <li>Discount: <span class="text-[#11111180]">000.00TK</span></li>
-          <li>Total: <span class="text-[#11111180]">000.00TK</span></li>
+          <li>Total: <span id="finalTotal" class="text-[#11111180]">000.00TK</span></li>
         </ul>
         <div class="grid grid-cols-1 items-center justify-center">
-          <button id="" class="bg-[#E527B2] px-6 py-4 md:px-8 text-white font-medium rounded-lg hover:bg-sky-600" disabled>Make Purchase</button>
+          <button id=""  class=" bg-[#E527B2] px-6 py-4 md:px-8 text-white font-medium rounded-lg hover:bg-sky-600" onclick="my_modal_1.showModal() " >Make Purchase</button>
+
+
+          <dialog id="my_modal_1" class="modal">
+            <form method="dialog" class="modal-box">
+              <div class="card bg-base-100 border border-gray-400 p-9">
+                <figure>
+                  <img class="w-1/2" src="images/congo.png" alt="Shoes" />
+                </figure>
+                <div class="card-body text-center">
+                  <h3 class="text-2xl font-semibold">Congratulations</h3>
+                  <p>Your Purchase the product</p>
+                  <div class="flex justify-center items-center gap-9">
+                    <button class=" btn bg-[#E527B2] text-white font-bold"> <a href="index.html">Go Home</a> </button>
+                   
+                  </div>
+              
+              </div>
+            </form>
+          </dialog>
+
         </div>
         
     </div>
